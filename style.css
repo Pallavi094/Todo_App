@@ -1,0 +1,173 @@
+/* Background */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #9a4dff, #5f2eea);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main card */
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  align-items: center;   /* keep items aligned */
+  gap: 8px;
+  margin-bottom: 15px;
+  flex-wrap: nowrap;     /* no wrapping */
+}
+
+#taskInput {
+  flex: 2;               /* more space for task text */
+  min-width: 0;          /* prevent overflow */
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+}
+
+#taskTime {
+  flex: 1;               /* smaller width for time */
+  min-width: 100px;      /* keeps it usable */
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+}
+
+#addBtn {
+  flex: 0;               /* fixed size, no stretching */
+  padding: 10px 16px;
+  border: none;
+  background: #7d5fff;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 500;
+  white-space: nowrap;   /* text stays inline */
+}
+#addBtn:hover {
+  background: #5f2eea;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.filters button {
+  flex: 1;
+  margin: 0 3px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.filters button.active {
+  background: #7d5fff;
+  color: #fff;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  background: #f8f6ff;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+li:hover {
+  transform: translateY(-2px);
+}
+
+/* Task header */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-header span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+/* Buttons */
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+.action-btns button {
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+.action-btns button:hover {
+  transform: scale(1.1);
+}
+
+.done-btn { background: #4caf50; color: white; }
+.edit-btn { background: #ffa500; color: white; }
+.delete-btn { background: #ff4d4d; color: white; }
+
+/* Task time */
+.time {
+  font-size: 12px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.time.overdue {
+  color: red;
+  font-weight: bold;
+}
+.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
